@@ -1,0 +1,52 @@
+baseURL = "https://uioo1021.github.io/"
+languageCode = "zh-cn"
+title = "李嘉慧's blog"
+theme = "github-style"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  author = "李嘉慧"
+  description = "In solitude, where we are least alone."
+  github = "uioo1021"
+  email = "147940115961@163.com"
+  url = "https://uioo1021.github.io/"
+  keywords = "blog, google analytics"
+  rss = true
+  lastmod = true
+  favicon = "/img/avatar.jpg"
+  avatar = "/img/avatar.jpg"
+  headerIcon = "/img/avatar.jpg"
+  location = "China"
+  userStatusEmoji = "😀"
+  enableGitalk = true
+  enableSearch = true
+
+
+  [params.gitalk]
+    clientID = "Your client ID" 
+    clientSecret = "Your client secret" 
+    repo = "uioo1021" 
+    owner = "uioo1021"
+    admin = "uioo1021" 
+    id = "location.pathname" 
+    labels = "gitalk" # Github issue labels. If you used to use Gitment, you can change it
+    perPage = 15 # Pagination size, with maximum 100.
+    pagerDirection = "last" # Comment sorting direction, available values are 'last' and 'first'.
+    createIssueManually = true
+    distractionFreeMode = false 
+    proxy = "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
+  [[params.links]]
+    title = "Link"
+    href = "https://github.com/uioo1021"
+  [[params.links]]
+    title = "Link2"
+    href = "https://uioo1021.github.io/"
+    icon = "/img/avatar.jpg"
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[services]
+  [services.googleAnalytics]
+    ID = "UA-123456-789"
