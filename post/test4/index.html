@@ -157,9 +157,9 @@
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 12 Mar 2025 21:51:19 &#43;0800"
+                  Modified <relative-time datetime="Wed, 12 Mar 2025 21:55:52 &#43;0800"
                     class="no-wrap">
-                    Wed, 12 Mar 2025 21:51:19 &#43;0800</relative-time>
+                    Wed, 12 Mar 2025 21:55:52 &#43;0800</relative-time>
                   
                 </div>
               </div>
@@ -189,7 +189,7 @@
                         </div>
                       </div>
                     </details-menu>
-                      473 Words
+                      540 Words
                     
 
                   </div>
@@ -255,8 +255,7 @@
 <p>按官网的提示下载主题，如 命令“ git clone <a href="https://github.com/g1eny0ung/hugo-theme-dream.git">https://github.com/g1eny0ung/hugo-theme-dream.git</a> dream ”</p>
 </li>
 <li>
-<p>进入toml文件，按官网的提示添加内容，如 添加“ theme = &lsquo;dream&rsquo; ” 。注意：public文件中要包含toml文件，且其中的baseURL要修改，不然会出现如下情况：</p>
-<p><img src="https://img.picui.cn/free/2025/03/12/67d1912480335.jpg" alt="img"></p>
+<p>进入toml文件，按官网的提示添加内容，如 添加“ theme = &lsquo;dream&rsquo; ” 。注意：public文件中要包含toml文件，且其中的baseURL要修改。</p>
 </li>
 <li>
 <p>用 命令“ hugo server ” 查看站点</p>
@@ -287,7 +286,11 @@ cd /C/myblog/blog/public/
 git add .
 git commit -m &#34;First commit&#34;
 git push -u origin main
-</code></pre><h2 id="参考">参考</h2>
+</code></pre><h2 id="问题">问题</h2>
+<p>出现如下情况：</p>
+<p><img src="C:%5CUsers%5C14794%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20250312215341523.png" alt="image-20250312215341523"></p>
+<p><strong>解决方案</strong>：修改hugo.yaml或hugo.toml中的baseUrl，运行hugo -D命令，重新生成静态文件，再上传到github仓库</p>
+<h2 id="参考">参考</h2>
 <ol>
 <li>博客：  <a href="https://ratmomo.github.io/p/2024/06/%E4%BD%BF%E7%94%A8-hugo--github-pages-%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">https://ratmomo.github.io/p/2024/06/%E4%BD%BF%E7%94%A8-hugo--github-pages-%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</a></li>
 <li>b站： <a href="https://www.bilibili.com/video/BV1H5CiYHEQR?vd_source=87faa856ec7502180e671c845f0a86c7">https://www.bilibili.com/video/BV1H5CiYHEQR?vd_source=87faa856ec7502180e671c845f0a86c7</a></li>
