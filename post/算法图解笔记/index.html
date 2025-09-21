@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>《算法图解》 - 李嘉慧&#39;s blog</title>
+    
+    <link rel="icon" type="image/x-icon" href='/img/avatar.jpg'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="《算法图解》读书笔记
+" />
+<meta name="keywords"
+  content='blog, google analytics' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E7%AC%94%E8%AE%B0/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="《算法图解》 - 李嘉慧&#39;s blog" />
+<meta name="twitter:description"
+  content="《算法图解》读书笔记
+" />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="《算法图解》 - 李嘉慧&#39;s blog">
+<meta property="og:description"
+  content="《算法图解》读书笔记
+" />
+<meta property="og:url" content="http://localhost:1313/post/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E7%AC%94%E8%AE%B0/" />
+<meta property="og:site_name" content="《算法图解》" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2025-03-12 15:52:22 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/img/avatar.jpg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" id="search-form" action="" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/img/avatar.jpg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/img/avatar.jpg"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">李嘉慧</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/post/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E7%AC%94%E8%AE%B0/">《算法图解》</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Wed, 12 Mar 2025 15:52:22 &#43;0800"
+                    class="no-wrap">
+                    Wed, 12 Mar 2025 15:52:22 &#43;0800</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Sun, 21 Sep 2025 19:56:02 &#43;0800"
+                    class="no-wrap">
+                    Sun, 21 Sep 2025 19:56:02 &#43;0800</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      5107 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      读书笔记
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><p>《算法图解》读书笔记</p>
+<h2 id="第一章">第一章</h2>
+<h3 id="二分查找">二分查找</h3>
+<ul>
+<li>
+<p>时间复杂度：O(log n)</p>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d1573539afc.png" alt="img"></p>
+</li>
+<li>
+<p>利用二分查找序列的条件：序列有序</p>
+</li>
+<li>
+<p>代码</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># 用 -1 而不是 —1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># 确保是整数除法</span>
+</span></span><span class="line"><span class="cl">        <span class="n">guess</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">mid</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="n">item</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span>
+</span></span></code></pre></div><h3 id="大o表示法">大O表示法</h3>
+<ul>
+<li>
+<p>常见的时间复杂度：</p>
+<p>O(log n) ，O(n)，O(n * log n)，O(n^2)，O(n!)</p>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d157b798b32.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="第二章">第二章</h2>
+<h3 id="数组">数组</h3>
+<ul>
+<li>
+<p>优点</p>
+<ol>
+<li><strong>访问速度快</strong>：数组支持随机访问（通过索引直接访问元素），其时间复杂度为 O(1)。</li>
+<li><strong>内存连续</strong>：数组在内存中是连续存储的，访问时速度较快。</li>
+<li><strong>空间开销小</strong>：数组只需要存储数据本身，不需要额外的指针或结构，因此相对较节省空间。</li>
+</ol>
+</li>
+<li>
+<p>缺点</p>
+</li>
+</ul>
+<ol>
+<li><strong>固定大小</strong>：数组的大小在初始化时就确定，无法动态扩展。如果需要改变数组的大小，需要重新分配一个更大的数组，并将原数据复制到新数组中，这可能非常耗时（O(n)）。</li>
+<li><strong>插入和删除性能差</strong>：在数组中插入或删除元素时，需要移动数组中的元素（O(n)），尤其是当操作发生在数组的开始或中间时。</li>
+<li><strong>内存碎片问题</strong>：如果数组大小不合适（过大或过小），可能会浪费内存或导致内存不足。</li>
+</ol>
+<h3 id="链表">链表</h3>
+<ul>
+<li>优点</li>
+</ul>
+<ol>
+<li><strong>动态大小</strong>：链表的大小可以动态增长或缩小，无需提前知道元素的个数，避免了数组中大小固定的限制。</li>
+<li><strong>插入和删除高效</strong>：在链表中插入或删除元素时，只需要修改相邻节点的指针，时间复杂度是 O(1)，这比数组更高效，尤其是在中间或开头插入和删除时。</li>
+<li><strong>内存利用率高</strong>：由于链表是按需分配内存的，所以可以灵活使用内存，避免了数组在大小不合适时的浪费。</li>
+</ol>
+<ul>
+<li>缺点</li>
+</ul>
+<ol>
+<li><strong>访问速度慢</strong>：链表不支持随机访问，查找某个元素时需要从头节点开始按顺序遍历，时间复杂度为 O(n)，因此在查询操作上比数组慢。</li>
+<li><strong>额外的内存开销</strong>：链表中的每个节点都需要额外的存储空间来存储指向下一个节点的指针或引用，导致内存消耗比数组大。</li>
+</ol>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d158024040f.png" alt="img"></p>
+<h3 id="选择排序">选择排序</h3>
+<ul>
+<li>
+<p>时间复杂度：O(n^2)</p>
+</li>
+<li>
+<p>代码</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">findSmallest</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="o">//</span><span class="n">找最小的元素索引</span>
+</span></span><span class="line"><span class="cl">    <span class="n">smallest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">smallest_index</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">smallest</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">smallest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">smallest_index</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">smallest_index</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="o">//</span><span class="n">从小到大排序</span>
+</span></span><span class="line"><span class="cl">    <span class="n">newArr</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">arr</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">smallest_index</span> <span class="o">=</span> <span class="n">findSmallest</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">newArr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">smallest_index</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">newArr</span>
+</span></span></code></pre></div><h2 id="第三章">第三章</h2>
+<h3 id="递归">递归</h3>
+<ul>
+<li>递归和循环的区别</li>
+</ul>
+<ol>
+<li><strong>递归</strong>：递归是指一个函数在定义中直接或间接地调用自身。递归将问题分解成更小的子问题，直到达到最简单的情况（基本情况）来结束递归。</li>
+<li><strong>循环</strong>：循环是指通过反复执行一段代码直到满足某个条件为止。</li>
+</ol>
+<ul>
+<li>递归的基线条件和递归条件</li>
+</ul>
+<ol>
+<li><strong>基线条件</strong>：基线条件是递归函数停止调用自身的条件，它告诉程序什么时候不再继续递归，而是返回最终结果。基线条件非常重要，因为如果没有正确的基线条件，递归会进入无限循环，导致栈溢出错误。</li>
+<li><strong>递归条件</strong>：递归条件是递归函数继续调用自身的部分。在递归条件中，问题被分解成一个或多个规模更小的子问题，递归函数会通过调用自身来解决这些子问题。</li>
+</ol>
+<h3 id="栈">栈</h3>
+<ul>
+<li>
+<p>栈：先进后出</p>
+</li>
+<li>
+<p>调用栈：每当程序执行一个函数调用时，程序会将当前函数的执行状态（包括局部变量、返回地址等）保存在调用栈中。这使得程序能够在函数调用结束后，恢复到原来的状态，继续执行。</p>
+</li>
+<li>
+<p>递归调用栈：递归函数也使用调用栈</p>
+</li>
+</ul>
+<h2 id="第四章">第四章</h2>
+<h3 id="分治">分治</h3>
+<ul>
+<li>基本步骤</li>
+</ul>
+<ol>
+<li><strong>分解</strong>：将原问题分解成多个规模较小的子问题，通常是通过递归的方式来进行分解。</li>
+<li><strong>求解</strong>：递归地解决这些子问题。如果子问题足够小，可以直接求解（通常称为基本情况或边界条件）。</li>
+<li><strong>合并</strong>：将子问题的解合并成原问题的解。</li>
+</ol>
+<h3 id="快速排序">快速排序</h3>
+<ul>
+<li>基本步骤：</li>
+</ul>
+<ol>
+<li>选择基准值：随机。</li>
+<li>将数组分成两个子数组：小于基准值的元素和大于基准值的元素。</li>
+<li>对这两个子数组进行快速排序。</li>
+</ol>
+<ul>
+<li>
+<p>时间复杂度：O(n*log n) （平均运行时间）</p>
+</li>
+<li>
+<p>代码</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">array</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pivot</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">less</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">pivot</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">greater</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">less</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">+</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">greater</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="大o表示法-1">大O表示法</h3>
+<ul>
+<li>常数</li>
+</ul>
+<ol>
+<li>大O表示法中的常量有时候事关重大，这就是快速排序比合并排序快的原因所在。</li>
+<li>比较简单查找和二分查找时，常量几乎无关紧要，因为列表很长时，O(log n)的速度比O(n)快得多。</li>
+</ol>
+<h2 id="第五章">第五章</h2>
+<h3 id="散列表">散列表</h3>
+<ul>
+<li>
+<p>时间复杂度：O(1)</p>
+</li>
+<li>
+<p>作用：</p>
+</li>
+</ul>
+<ol>
+<li>模拟映射关系；</li>
+<li>防止重复；</li>
+<li>缓存/记住数据，以免服务器再通过处理来生成它们。</li>
+</ol>
+<ul>
+<li>冲突（两个键对应一个值）</li>
+</ul>
+<ol>
+<li>填装因子越低，发生冲突的可能性越小，散列表的性能越高。（一旦填装因子大于0.7，就调整散列表的长度）</li>
+<li>良好的散列函数让数组中的值呈均匀分布；糟糕的散列函数让值扎堆，导致大量的冲突。</li>
+</ol>
+<h2 id="第六章">第六章</h2>
+<h3 id="广度优先搜索">广度优先搜索</h3>
+<ul>
+<li>
+<p>时间复杂度：O(V + E)，其中V为顶点数，E为边数。</p>
+</li>
+<li>
+<p>适用方向：</p>
+</li>
+</ul>
+<ol>
+<li>第一类问题：从节点A出发，有前往节点B的路径吗？</li>
+<li>第二类问题：从节点A出发，前往节点B的哪条路径最短</li>
+</ol>
+<ul>
+<li>有向图和无向图</li>
+</ul>
+<ol>
+<li><strong>有向图</strong>：有向图中的边为箭头，箭头的方向指定了关系的方向。</li>
+<li><strong>无向图</strong>： 无向图中的边不带箭头，其中的关系是双向的</li>
+</ol>
+<ul>
+<li>
+<p>队列：先进先出</p>
+</li>
+<li>
+<p>bfs代码</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="拓扑排序">拓扑排序</h3>
+<ul>
+<li>定义：如果任务A依赖于任务B，在列表中任务A就必须在任务B后面。使用它可根据图创建一个有序列表。</li>
+</ul>
+<h2 id="第七章">第七章</h2>
+<h3 id="狄克斯特拉算法">狄克斯特拉算法</h3>
+<ul>
+<li>基本步骤</li>
+</ul>
+<ol>
+<li>找出“最便宜”的节点，即可在最短时间内到达的节点。</li>
+<li>对于该节点的邻居，检查是否有前往它们的更短路径，如果有，就更新其开销。</li>
+<li>重复这个过程，直到对图中的每个节点都这样做了。</li>
+<li>计算最终路径。</li>
+</ol>
+<ul>
+<li>使用条件</li>
+</ul>
+<ol>
+<li>狄克斯特拉算法只适用于有向无环图</li>
+<li>如果有负权边，就不能使用狄克斯特拉算法</li>
+</ol>
+<ul>
+<li>
+<p>代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">heapq</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distances</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distances</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">priority_queue</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">start</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">priority_queue</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">current_distance</span><span class="p">,</span> <span class="n">current_node</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">current_distance</span> <span class="o">&gt;</span> <span class="n">distances</span><span class="p">[</span><span class="n">current_node</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">neighbor</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">current_node</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">distance</span> <span class="o">=</span> <span class="n">current_distance</span> <span class="o">+</span> <span class="n">weight</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">distances</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">distances</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span>
+</span></span><span class="line"><span class="cl">                <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">,</span> <span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">distances</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">start_node</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">distances</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">distances</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">start_node</span><span class="si">}</span><span class="s2"> 到 </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> 的最短距离是 </span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div></li>
+<li>
+<p>狄克斯特拉算法和广度优先搜索的区别</p>
+</li>
+</ul>
+<ol>
+<li>狄克斯特拉算法适用于在加权图中查找最短路径。</li>
+<li>广度优先搜索用于在非加权图中查找最短路径。</li>
+</ol>
+<h2 id="第八章">第八章</h2>
+<h3 id="贪婪算法">贪婪算法</h3>
+<ul>
+<li>
+<p>具体思想：每步都选择局部最优解，最终得到的就是全局最优解。</p>
+</li>
+<li>
+<p>背包问题：贪婪策略不能获得最优解</p>
+</li>
+</ul>
+<h3 id="np完全问题">NP完全问题</h3>
+<ul>
+<li>
+<p>定义：不可能编写出可快速解决这些问题的算法，你需要计算<strong>所有</strong>的解，并从中选出最小/最短
+的那个。</p>
+</li>
+<li>
+<p>解决方法：面临NP完全问题时，最佳的做法是使用近似算法。而<strong>贪婪算法</strong>易于实现、运行速度快，是不错的近似算法。</p>
+</li>
+<li>
+<p>旅行商问题</p>
+</li>
+</ul>
+<ol>
+<li>有一位旅行商。他需要前往5个城市。这位旅行商要前往这n个城市，同时要确保旅程最短。为此，可考虑前往这些城市的各种可能顺序。对于每种顺序，他都计算总旅程，再挑选出旅程最短的路线。因此运行时间为O(n!)</li>
+<li>近似算法：</li>
+</ol>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d15871d3553.png" alt="img"></p>
+<ul>
+<li>集合覆盖问题</li>
+</ul>
+<ol>
+<li>假设你办了个广播节目，要让全美50个州的听众都收听得到。为此，你需要决定在哪些广播台播出。在每个广播台播出都需要支付费用，因此你力图在尽可能少的广播台播出。广播台名单已给出。每个广播台都覆盖特定的区域，不同广播台的覆盖区域可能重叠。如何找出覆盖全美50个州的最小广播台集合呢？ 列出每个可能的广播台集合，可能的子集有2^n个。在这些集合中，选出覆盖全美50个州的最小集合。</li>
+<li>近似算法：</li>
+</ol>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d158945fb2b.png" alt="img"></p>
+<ul>
+<li>识别NP完全问题</li>
+</ul>
+<ol>
+<li>元素较少时算法的运行速度非常快，但随着元素数量的增加，速度会变得非常慢。</li>
+<li>涉及“所有组合”的问题通常是NP完全问题。</li>
+<li>不能将问题分成小问题，必须考虑各种可能的情况。这可能是NP完全问题。</li>
+<li>如果问题涉及序列（如旅行商问题中的城市序列）且难以解决，它可能就是NP完全问题。</li>
+<li>如果问题涉及集合（如广播台集合）且难以解决，它可能就是NP完全问题。</li>
+<li>如果问题可转换为集合覆盖问题或旅行商问题，那它肯定是NP完全问题。</li>
+</ol>
+<h2 id="第九章">第九章</h2>
+<h3 id="动态规划">动态规划</h3>
+<ul>
+<li>使用条件</li>
+</ul>
+<ol>
+<li>使用动态规划时，要么考虑拿走整件商品，要么考虑不拿，而<strong>没法判断该不该拿走商品的一部分</strong>。但使用<strong>贪婪算法</strong>可轻松地处理这种情况！首先，尽可能多地拿价值最高的商品；如果拿光了，再尽可能多地拿价值次高的商品，以此类推。</li>
+<li>仅当每个子问题都是离散的，即不依赖于其他子问题时，动态规划才管用</li>
+</ol>
+<h3 id="最长公共子串">最长公共子串</h3>
+<ul>
+<li>具体步骤</li>
+</ul>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d15bbc3b01d.png" alt="img"></p>
+<p>对于最长公共子串问题，答案为网格中最大的数字，它可能并不位于最后的单元格中。</p>
+<ul>
+<li>代码</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">longest_common_substring_length</span><span class="p">(</span><span class="n">word_a</span><span class="p">,</span> <span class="n">word_b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_a</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cell</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">longest_length</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">word_a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">word_b</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cell</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="n">longest_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">longest_length</span><span class="p">,</span> <span class="n">cell</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cell</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">longest_length</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">word_a</span> <span class="o">=</span> <span class="s2">&#34;abcdefg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">word_b</span> <span class="o">=</span> <span class="s2">&#34;zcdemfgh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">longest_common_substring_length</span><span class="p">(</span><span class="n">word_a</span><span class="p">,</span> <span class="n">word_b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="最长公共子序列">最长公共子序列</h3>
+<ul>
+<li>具体步骤</li>
+</ul>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d15bf72c9de.png" alt="img"></p>
+<p>对于最长公共子序列问题，答案位于<strong>最后的单元格</strong>中。</p>
+<ul>
+<li>
+<p>代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">longestCommonSubsequence</span><span class="p">(</span><span class="n">word_a</span><span class="p">,</span> <span class="n">word_b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cell</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">word_a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">word_b</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cell</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cell</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">cell</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">cell</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">word_a</span> <span class="o">=</span> <span class="s2">&#34;abcdefg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">word_b</span> <span class="o">=</span> <span class="s2">&#34;zcdemfgh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">lcs_length</span> <span class="o">=</span> <span class="n">longestCommonSubsequence</span><span class="p">(</span><span class="n">word_a</span><span class="p">,</span> <span class="n">word_b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Length of longest common subsequence: </span><span class="si">{</span><span class="n">lcs_length</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="第十章">第十章</h2>
+<h3 id="k最近邻算法">K最近邻算法</h3>
+<ul>
+<li>
+<p>邻居的定义：给定一个待预测的数据点，KNN算法通过计算该点与训练数据中所有其他点的距离来选择K个最相似的邻居。</p>
+</li>
+<li>
+<p>K的选择：</p>
+</li>
+</ul>
+<ol>
+<li>K值：即“最近邻”的数量。常常需要根据数据的特点来选择K值。</li>
+<li>如果K值过小，模型容易对噪声数据过拟合；如果K值过大，模型可能过于简单，导致欠拟合。</li>
+</ol>
+<ul>
+<li>距离度量：KNN算法的核心是计算数据点之间的距离。最常用的距离度量方法是<strong>欧几里得距离</strong></li>
+</ul>
+<ul>
+<li>
+<p>分类：KNN常用于分类问题，分类就是编组。对于待分类的数据点，算法根据其K个最近邻的数据点的类别，采用多数投票原则来确定该数据点的类别。</p>
+</li>
+<li>
+<p>回归：回归就是预测结果。在回归问题中，KNN预测的是一个数值，而不是类别。它通过K个邻居的<strong>平均值或加权平均值</strong>来进行预测。</p>
+</li>
+</ul>
+<h3 id="机器学习">机器学习</h3>
+<ul>
+<li>
+<p>光学字符识别（OCR）：OCR的第一步是查看大量的数字图像并提取特征，这被称为训练。OCR中的特征提取要复杂得多，但再复杂的技术也是基于KNN等简单理念的。这些理念也可用于语音识别和人脸识别。</p>
+</li>
+<li>
+<p>朴素贝叶斯分类器：朴素贝叶斯分类器能计算出邮件为垃圾邮件的概率，其应用领域与KNN相似。</p>
+</li>
+</ul>
+<h2 id="第十一章">第十一章</h2>
+<h3 id="二叉查找树">二叉查找树</h3>
+<ul>
+<li>优点：二叉查找树的插入和删除操作的速度快。</li>
+</ul>
+<p><img src="https://img.picui.cn/free/2025/03/12/67d15a80437b4.png" alt="img"></p>
+<ul>
+<li>缺点：不能随机访问。</li>
+</ul>
+<h3 id="反向索引">反向索引</h3>
+<ul>
+<li>
+<p>定义：一个散列表，将单词映射到包含它的页面。</p>
+</li>
+<li>
+<p>应用：搜索引擎</p>
+</li>
+</ul>
+<h3 id="傅里叶变换">傅里叶变换</h3>
+<ul>
+<li>应用：</li>
+</ul>
+<ol>
+<li><strong>音频压缩（如MP3）</strong>：傅里叶变换可以将音频信号分解为不同的频率成分，帮助识别哪些音符对整体音频的贡献较大，哪些可以忽略，从而实现数据压缩。例如，在MP3格式中，傅里叶变换使得只保留重要频率成分，删除不重要的部分，降低文件大小。</li>
+<li><strong>图像压缩（如JPG）</strong>：JPG图像压缩同样利用傅里叶变换（更常见的是离散余弦变换）将图像信号分解为频率成分，从而实现压缩。只保留重要的频率成分，去除不显著的细节，使得图像文件变小。</li>
+<li><strong>音乐识别（如Shazam）</strong>：傅里叶变换可以将音乐信号分解为不同的频率成分，这些频率特征可以用于比较和识别歌曲。例如，Shazam利用傅里叶变换来识别你所听到的音乐，通过匹配音频频谱来找到匹配的歌曲。</li>
+<li><strong>地震预测和DNA分析</strong>：傅里叶变换也被用于地震波信号的分析，帮助科学家识别潜在的地震活动模式；同时，它在基因组学中也有重要应用，分析DNA的频率特征，帮助研究基因表达模式等。</li>
+</ol>
+<h3 id="并行算法">并行算法</h3>
+<ul>
+<li>
+<p>定义：笔记本电脑和台式机转而采用多核处理器。为提高算法的速度，你需要让它们
+能够在多个内核中并行地执行</p>
+</li>
+<li>
+<p>提升速度的难点：</p>
+</li>
+</ul>
+<ol>
+<li>并行性管理开销：合并也需要时间。</li>
+<li>负载均衡：均匀地分配工作，让各个内核都一样忙</li>
+</ol>
+<h3 id="分布式算法">分布式算法</h3>
+<ul>
+<li>
+<p>定义：在并行算法只需两到四个内核时，完全可以在笔记本电脑上运行它，但如果需要数百个内核呢？在这种情况下，可<strong>让算法在多台计算机上运行</strong>。分布式算法非常适合用于在短时间内完成海量工作。</p>
+</li>
+<li>
+<p>MapReduce（一种流行的分布式算法）</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>映射函数：接受一个数组，并对其中的每个元素执行同样的处理。映射是将一个数组转换为另一个数组。</p>
+</li>
+<li>
+<p>归并函数：归并是将一个数组转换为一个元素。</p>
+</li>
+</ol>
+<h3 id="布隆过滤器">布隆过滤器</h3>
+<ul>
+<li>
+<p>定义：布隆过滤器是一种概率型数据结构，它提供的答案有可能不对，但很可能是正确的。为判断网页以前是否已搜集，可不使用散列表，而使用布隆过滤器。使用散列表时，答案绝对可靠，而使用布隆过滤器时，答案却是很可能是正确的。</p>
+</li>
+<li>
+<p>优点：占用的存储空间很少。使用散列表时，必须存储Google搜集过的所有URL，但使用布隆过滤器时不用这样做。</p>
+</li>
+</ul>
+<h3 id="hyperloglog">HyperLogLog</h3>
+<ul>
+<li>
+<p>定义：近似地计算集合中不同的元素数。它不能给出准确的答案，但也八九不离十，而占用的内存空间却少得多。</p>
+</li>
+<li>
+<p>面临海量数据且只要求答案八九不离十时，可考虑使用概率型算法。</p>
+</li>
+</ul>
+<h3 id="安全散列算法">安全散列算法</h3>
+<ul>
+<li>
+<p>定义：给定一个字符串，SHA返回其散列值。对于每个不同的字符串，SHA生成的散列值都不同。</p>
+</li>
+<li>
+<p>应用：</p>
+</li>
+</ul>
+<ol>
+<li>使用SHA来判断两个文件是否相同：计算文件的SHA散列值，再对结果进行比较。</li>
+<li>检查密码：在不知道原始字符串的情况下对其进行比较。保证了密码的安全性。</li>
+</ol>
+<h3 id="simhash">Simhash</h3>
+<ul>
+<li>
+<p>定义：SHA还有一个重要特征，那就是局部不敏感的。修改其中的一个字符，再计算其散列值，结果将截然不同。有时候我们希望散列函数是局部敏感的。在这种情况下，可使用Simhash。如果你对字符串做细微的修改，Simhash生成的散列值也只存在细微的差别。这让你能够通过比较散列值来判断两个字符串的相似程度。</p>
+</li>
+<li>
+<p>应用：需要检查两项内容的相似程度时，Simhash很有用。</p>
+</li>
+</ul>
+<h3 id="diffie-hellman-密钥交换">Diffie-Hellman 密钥交换</h3>
+<ul>
+<li>优点</li>
+</ul>
+<ol>
+<li>双方无需知道加密算法。他们不必会面协商要使用的加密算法。</li>
+<li>要破解加密的消息非常困难</li>
+</ol></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+<div id="gitalk-container" class="gitalk-container"></div>
+<link rel="stylesheet" href='http://localhost:1313/css/gitalk.css'>
+<script src='http://localhost:1313/js/gitalk.min.js'></script>
+<script>
+  const gitalk = new Gitalk({
+    clientID: 'Your client ID',
+    clientSecret: 'Your client secret',
+    repo: 'uioo1021',
+    owner: 'uioo1021',
+    admin: ['uioo1021'],
+    id: eval("location.pathname"), 
+    distractionFreeMode: false 
+  });
+  (function() {
+    gitalk.render('gitalk-container');
+  })();
+</script>
+
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script type="application/javascript" src='http://localhost:1313/js/search.js'></script>
+
+
+
+</html>
